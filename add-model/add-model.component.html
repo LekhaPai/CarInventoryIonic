@@ -1,0 +1,51 @@
+<!-- <p>
+  add-model works!
+</p> -->
+<ion-content>
+  <form  #form="ngForm" (ngSubmit)="addCarModelData(form)">
+  <ion-grid>
+    <ion-row color="primary" class="ion-justify-content-left">
+      <ion-col size-md="6" size-lg="6" size-xs="12">
+        <div class="ion-text-center">
+          <h3>Add Manufacturer</h3>
+        </div>
+        <div class="ion-padding">
+          <ion-item>
+            <ion-input  name="modelName" type="text" placeholder="Enter Model Name" ngModel required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input  name="color" type="text" placeholder="Enter Color" ngModel required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input  name="year" type="text" placeholder="Enter Manufacturing Year" ngModel required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input  name="regno" type="text" placeholder="Enter Car Registration No" ngModel required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input  name="note" type="text" placeholder="Additional Note" ngModel required></ion-input>
+          </ion-item>
+        </div>
+        <div class="ion-padding">
+          <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Submit</ion-button>
+        </div>
+      </ion-col>
+      <ion-col  size-md="6" size-lg="6" size-xs="12">
+        <div class="ion-text-center">
+          <h3>Select the Manufacturer</h3>
+        </div>
+        <div class="ion-padding" style="padding-top: 8px;">
+          <ion-list>
+            <ion-item>
+              <ion-label>Manufacturer</ion-label>
+              <ion-select interface="popover">
+                <ion-select-option *ngFor="let manufacturer of manufacturerNames">{{ manufacturer }}</ion-select-option>
+              </ion-select>
+            </ion-item>
+            </ion-list>
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+</ion-content>
